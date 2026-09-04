@@ -1,0 +1,92 @@
+﻿# ===== CMake build directories =====
+# (CLion's own cmake-build-*/.gitignore handles its own dir; this is a safety net)
+cmake-build-*/
+cmake-build-*/
+build/
+out/
+
+# ===== C/C++ build artifacts =====
+*.exe
+*.obj
+*.o
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.bsc
+*.su
+
+# ===== CMake generated files =====
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# ===== MSVC / Visual Studio =====
+.vs/
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+Win32/
+*.user
+*.suo
+*.sln.docstates
+*.userprefs
+*.lockfile
+ipch/
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*.tlog
+*.lastbuildstate
+*.unsuccessfulbuild
+*.idb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+
+# ===== MinGW / GCC =====
+*.o
+*.obj
+*.a
+*.lib
+
+# ===== Editor / IDE backups =====
+*.swp
+*.swo
+*.bak
+*~
+.vscode/
+*.code-workspace
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+
+# ===== Local dev (do not track) =====
+*.local
+.env
+.env.local
+secrets.txt
