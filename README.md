@@ -1,64 +1,40 @@
-markdown
-# 高斯消元法
+# 算法仓库 (Algorithm Repository)
 
-#### 介绍
-本项目是一个实现高斯消元法（Gaussian Elimination）的算法库，主要用于求解线性方程组 \(Ax = b\)。它包含了基础的高斯消元、列主元消去法以及矩阵求逆等核心功能。不仅提供了数学公式的实现，还附带了详细的算法注释。
+> **欢迎来到我的算法练习仓库！**
+> 
+> 本仓库打破常规，采用了 **“一算法一分支”** 的独特管理策略。每个分支代表一个独立的算法主题或数据结构，彼此互不影响，方便随时查阅和对比学习。
+> 
+> 当前页面（`guass` 分支）是该仓库的 **主入口**，你可以在这里找到通往所有算法分支的快捷链接。
 
-#### 软件架构
-软件架构说明：
+---
 
-*   **核心库**：包含高斯消元的底层数学运算逻辑，支持浮点数（double）和分数（Fraction）运算，以避免精度丢失。
-*   **输入输出模块**：支持从标准输入、文本文件或矩阵数组读取系数矩阵和常数项。
-*   **测试模块**：包含单元测试和多种边界用例（如无解、无穷多解、奇异性矩阵），确保算法的健壮性。
+## 🧭 快速导航（分支索引）
 
-#### 安装教程
+在 GitHub 网页端，点击上方的分支切换按钮，或者直接点击下方链接，即可跳转到对应算法分支的详细代码页面。
 
-1.  **环境准备**：
-    *   （例如：需要安装 Python 3.8+ 或 GCC 11.0+）
-    *   克隆本仓库：`git clone https://gitee.com/your_username/gaussian-elimination.git`
-2.  **依赖安装**（如果使用 Python）：
-    *   进入项目目录：`cd gaussian-elimination`
-    *   安装依赖包：`pip install -r requirements.txt`
-3.  **编译构建**（如果使用 C/C++）：
-    *   运行 `make` 命令进行编译。
-    *   或者使用 CMake：`mkdir build && cd build && cmake .. && make`
+| 分支名称 | 核心算法 / 数据结构 | 实现语言 | 分支简述 | 快速直达 |
+| :--- | :--- | :--- | :--- | :--- |
+| **`guass`** | 高斯消元法 | C++ | 当前主分支。包含异或高斯消元模板、位图优化解法，以及相关算法题库的详细笔记。 | [🔗 前往 guass](https://github.com/xiao-meng-byte/gaussian-elimination/tree/guass) |
+| **`stack`** | 栈 (Stack) | C++ / Java | 手写动态扩容栈、表达式求值（中缀/后缀）、括号匹配等经典栈应用。 | [🔗 前往 stack](https://github.com/xiao-meng-byte/gaussian-elimination/tree/stack) |
+| **`tree`** | 树 (Tree) | Java | 二叉树的构建、前/中/后序遍历（递归与非递归），以及树形结构的常见操作。 | [🔗 前往 tree](https://github.com/xiao-meng-byte/gaussian-elimination/tree/tree) |
+| **`binary`** | 位运算 (Bit) | Java | 异或运算技巧、进制转换（二/八/十/十六）、以及利用位运算实现状态压缩。 | [🔗 前往 binary](https://github.com/xiao-meng-byte/gaussian-elimination/tree/binary) |
+| **`bitset`** | 位图 (Bitset) | Java | 底层基于位（Bit）的数据结构实现，包含插入、删除、反转、统计等基础操作及原理解析。 | [🔗 前往 bitset](https://github.com/xiao-meng-byte/gaussian-elimination/tree/bitset) |
+| **`hash`** | 哈希表 (Hash) | Java | 哈希表底层原理、哈希映射、冲突处理机制及典型算法应用。 | [🔗 前往 hash](https://github.com/xiao-meng-byte/gaussian-elimination/tree/hash) |
 
-#### 使用说明
+---
 
-1.  **基本调用**：引入库文件，创建一个矩阵对象。
-    ```python
-    # 示例代码（根据实际语言修改）
-    from gaussian_elimination import Solver
-    matrix = [[2, 1, -1], [-3, -1, 2], [-2, 1, 2]]
-    vector = [8, -11, -3]
-    result = Solver.solve(matrix, vector)
-    print(result)
-处理特例：当矩阵不可逆时，程序会抛出异常或返回无解提示。
+## 📖 本地克隆与切换指南
 
-命令行运行：可以直接运行 main.py 并按照提示输入方程组的增广矩阵。
+如果你想在本地查看所有分支的代码，只需在终端执行以下命令：
 
-参与贡献
-Fork 本仓库
+### 1. 克隆整个仓库
+git clone git@github.com:xiao-meng-byte/gaussian-elimination.git
 
-新建 Feat_xxx 分支
+### 2. 进入仓库目录
+cd gaussian-elimination
 
-提交代码
+### 3. 查看所有分支
+git branch -a
 
-新建 Pull Request
-
-特技
-使用 Readme_XXX.md 来支持不同的语言，例如 Readme_en.md, Readme_zh.md
-
-Gitee 官方博客使用指南：https://blog.gitee.com
-
-text
-
-***
-
-### 💡 针对性修改建议（根据你实际情况）：
-
-*   **软件架构**：如果你的代码是纯 C++ 写的，去掉 Python 的依赖安装，改为 Makefile/CMake 编译说明。
-*   **使用说明**：一定要给出**一个具体的输入例子**和**对应的输出结果**，这是读者最想看的。
-*   **安装教程**：如果不需要安装，只需要一行代码引入，你可以直接写：“无需复杂安装，直接复制 `gaussian.c` 和 `gaussian.h` 到你的工程即可”。
-
-如果你能告诉我你的代码是用什么语言写的（比如 Python 或 C++），以及它的运行方式，我可以帮你把上面的示例代码改成**完全匹配你项目的**最终版本。
+### 4. 切换到你想查看的算法分支（例如看栈的代码）
+git checkout stack
