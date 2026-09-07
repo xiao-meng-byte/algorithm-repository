@@ -23,6 +23,8 @@
 | **`fenwick`** | 树状数组 (Fenwick Tree) | C++ | 树状数组核心原理推导、单点修改/区间查询、区间修改/单点查询、双树状数组模拟区间修改与区间求和。 | [🔗 前往 fenwick](https://github.com/xiao-meng-byte/gaussian-elimination/tree/fenwick) |
 | **`subarray`** | 子数组 (Subarray) | C++ / Java | 连续子数组问题总结。涵盖 Kadane 算法、前缀和+贪心、滑动窗口、环形数组、乘积最大子数组、位运算异或最大子数组等经典题型。 | [🔗 前往 subarray](https://github.com/xiao-meng-byte/gaussian-elimination/tree/subarray) |
 | **`deque`** | 队列 / 双端队列 (Deque) | C++ / Java | 优先队列原理、手写完全二叉树（堆）、单调队列、滑动窗口、双端队列基础用法及其实现。 | [🔗 前往 deque](https://github.com/xiao-meng-byte/gaussian-elimination/tree/deque) |
+| **`dsu`** | 并查集 (Disjoint Set Union) | C++ / Java | 并查集原理及核心优化：路径压缩（扁平化）、按秩合并（小挂大），以及求解连通块数量的基本应用。 | [🔗 前往 dsu](https://github.com/xiao-meng-byte/gaussian-elimination/tree/dsu) |
+| **`MST`** | 最小生成树 (Minimum Spanning Tree) | C++ / Java | 最小生成树经典算法：Prim（普里姆算法）和 Kruskal（克鲁斯卡尔算法），以及结合并查集判环的应用。 | [🔗 前往 MST](https://github.com/xiao-meng-byte/gaussian-elimination/tree/MST) |
 
 ---
 
