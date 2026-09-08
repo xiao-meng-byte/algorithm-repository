@@ -14,7 +14,7 @@
 
 | 分支名称 | 核心算法 / 数据结构 | 实现语言 | 分支简述 | 快速直达 |
 | :--- | :--- | :--- | :--- | :--- |
-| **`guass`** | 高斯消元法 | C++ | 当前主分支。包含异或高斯消元模板、位图优化解法，以及相关算法题库的详细笔记。 | [🔗 前往 guass](https://github.com/xiao-meng-byte/gaussian-elimination/tree/guass) |
+| **`guass`** | 高斯消元法 | C++ | **当前主分支**。包含异或高斯消元模板、位图优化解法，以及相关算法题库的详细笔记。 | [🔗 前往 guass](https://github.com/xiao-meng-byte/gaussian-elimination/tree/guass) |
 | **`stack`** | 栈 (Stack) | C++ / Java | 手写动态扩容栈、表达式求值（中缀/后缀）、括号匹配等经典栈应用。 | [🔗 前往 stack](https://github.com/xiao-meng-byte/gaussian-elimination/tree/stack) |
 | **`SegmentTree`** | 线段树 (Segment Tree) | C++ / Java | 线段树的构建、区间查询、区间修改（加法/乘法/赋值），以及懒标记（Lazy Tag）的经典应用。 | [🔗 前往 SegmentTree](https://github.com/xiao-meng-byte/gaussian-elimination/tree/SegmentTree) |
 | **`binary`** | 位运算 (Bit) | Java | 异或运算技巧、进制转换（二/八/十/十六）、以及利用位运算实现状态压缩。 | [🔗 前往 binary](https://github.com/xiao-meng-byte/gaussian-elimination/tree/binary) |
@@ -25,6 +25,28 @@
 | **`deque`** | 队列 / 双端队列 (Deque) | C++ / Java | 优先队列原理、手写完全二叉树（堆）、单调队列、滑动窗口、双端队列基础用法及其实现。 | [🔗 前往 deque](https://github.com/xiao-meng-byte/gaussian-elimination/tree/deque) |
 | **`dsu`** | 并查集 (Disjoint Set Union) | C++ / Java | 并查集原理及核心优化：路径压缩（扁平化）、按秩合并（小挂大），以及求解连通块数量的基本应用。 | [🔗 前往 dsu](https://github.com/xiao-meng-byte/gaussian-elimination/tree/dsu) |
 | **`MST`** | 最小生成树 (Minimum Spanning Tree) | C++ / Java | 最小生成树经典算法：Prim（普里姆算法）和 Kruskal（克鲁斯卡尔算法），以及结合并查集判环的应用。 | [🔗 前往 MST](https://github.com/xiao-meng-byte/gaussian-elimination/tree/MST) |
+| **`prime`** | 质数筛 (Prime Sieve) | C++ / Java | 质数筛综合总结：试除法、埃氏筛、欧拉筛（线性筛），以及大数质数判定的 Miller-Rabin 算法。 | [🔗 前往 prime](https://github.com/xiao-meng-byte/gaussian-elimination/tree/prime) |
+
+---
+
+## 🎯 仓库亮点
+
+* **一算法一分支**：极简的导航逻辑，想看什么算法直接切分支，互不干扰。
+* **多语言实现**：同一核心算法不仅提供 C++ 版本，还提供 Java 版本，方便跨语言对比学习。
+* **万字详细笔记**：每个分支都不仅包含代码，还附带了详尽的思路推导、时间复杂度分析、多解法对比（如：埃氏筛 vs 欧拉筛）。
+* **经典错题合集**：汇集了洛谷、牛客、力扣（LeetCode）上的经典题解和易错点分析。
+
+---
+
+## 🗺️ 算法专栏目录
+
+| 专栏分类 | 包含分支 | 适用阶段 |
+| :--- | :--- | :--- |
+| **数据结构基础** | `stack`, `deque`, `hash`, `bitset` | 大一/入门 |
+| **进阶数据结构** | `SegmentTree`, `fenwick`, `dsu` | 进阶/大二 |
+| **图论算法** | `guass`, `MST` | 进阶/省赛 |
+| **数论算法** | `prime` | 进阶/奥赛 |
+| **动态规划与子数组** | `subarray`, `binary` | 核心/面试 |
 
 ---
 
