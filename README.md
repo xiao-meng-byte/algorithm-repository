@@ -32,7 +32,7 @@
 | **`deque`** | 队列 / 双端队列 (Deque) | C++ / Java | 优先队列原理、手写完全二叉树（堆）、单调队列、滑动窗口、双端队列基础用法及其实现。 | [🔗 前往 deque](https://github.com/xiao-meng-byte/algorithm-repository/tree/deque) |
 | **`dsu`** | 并查集 (Disjoint Set Union) | C++ / Java | 并查集原理及核心优化：路径压缩（扁平化）、按秩合并（小挂大），以及求解连通块数量的基本应用。 | [🔗 前往 dsu](https://github.com/xiao-meng-byte/algorithm-repository/tree/dsu) |
 | **`MST`** | 最小生成树 (Minimum Spanning Tree) | C++ / Java | 最小生成树经典算法：Prim（普里姆算法）和 Kruskal（克鲁斯卡尔算法），以及结合并查集判环的应用。 | [🔗 前往 MST](https://github.com/xiao-meng-byte/algorithm-repository/tree/MST) |
-| **`prime`** | 质数筛 (Prime Sieve) | C++ / C | 质数筛综合总结：试除法、埃氏筛、欧拉筛（线性筛），以及大数质数判定的 Miller-Rabin 算法。 | [🔗 前往 prime](https://github.com/xiao-meng-byte/algorithm-repository/tree/prime) |
+| **`prime`** | 质数筛 (Prime Sieve) | C++ / C/ Java | 质数筛综合总结：试除法、埃氏筛、欧拉筛（线性筛），以及大数质数判定的 Miller-Rabin 算法。 | [🔗 前往 prime](https://github.com/xiao-meng-byte/algorithm-repository/tree/prime) |
 | **`fastpow`** | 快速幂 (Fast Power) | C++ / python | 快速幂原理学习：二进制拆分、乘法快速幂、快速乘防溢出，以及矩阵快速幂解决斐波那契/泰波那契/线性递推问题。 | [🔗 前往 fastpow](https://github.com/xiao-meng-byte/algorithm-repository/tree/fastpow) |
 | **`sliding-window`** | 滑动窗口 (Sliding Window) | C++ / Java | 滑动窗口经典问题：无重复字符的最长子串、长度最小的子数组、定长窗口最值等题型总结。 | [🔗 前往 sliding-window](https://github.com/xiao-meng-byte/algorithm-repository/tree/sliding-window) |
 
