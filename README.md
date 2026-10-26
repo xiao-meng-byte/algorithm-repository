@@ -32,9 +32,10 @@
 | **`deque`** | 队列 / 双端队列 (Deque) | C++ / Java | 优先队列原理、手写完全二叉树（堆）、单调队列、滑动窗口、双端队列基础用法及其实现。 | [🔗 前往 deque](https://github.com/xiao-meng-byte/algorithm-repository/tree/deque) |
 | **`dsu`** | 并查集 (Disjoint Set Union) | C++ / Java | 并查集原理及核心优化：路径压缩（扁平化）、按秩合并（小挂大），以及求解连通块数量的基本应用。 | [🔗 前往 dsu](https://github.com/xiao-meng-byte/algorithm-repository/tree/dsu) |
 | **`MST`** | 最小生成树 (Minimum Spanning Tree) | C++ / Java | 最小生成树经典算法：Prim（普里姆算法）和 Kruskal（克鲁斯卡尔算法），以及结合并查集判环的应用。 | [🔗 前往 MST](https://github.com/xiao-meng-byte/algorithm-repository/tree/MST) |
-| **`prime`** | 质数筛 (Prime Sieve) | C++ / C/ Java | 质数筛综合总结：试除法、埃氏筛、欧拉筛（线性筛），以及大数质数判定的 Miller-Rabin 算法。 | [🔗 前往 prime](https://github.com/xiao-meng-byte/algorithm-repository/tree/prime) |
+| **`prime`** | 质数筛 (Prime Sieve) | C++ / C /Java| 质数筛综合总结：试除法、埃氏筛、欧拉筛（线性筛），以及大数质数判定的 Miller-Rabin 算法。 | [🔗 前往 prime](https://github.com/xiao-meng-byte/algorithm-repository/tree/prime) |
 | **`fastpow`** | 快速幂 (Fast Power) | C++ / python | 快速幂原理学习：二进制拆分、乘法快速幂、快速乘防溢出，以及矩阵快速幂解决斐波那契/泰波那契/线性递推问题。 | [🔗 前往 fastpow](https://github.com/xiao-meng-byte/algorithm-repository/tree/fastpow) |
 | **`sliding-window`** | 滑动窗口 (Sliding Window) | C++ / Java | 滑动窗口经典问题：无重复字符的最长子串、长度最小的子数组、定长窗口最值等题型总结。 | [🔗 前往 sliding-window](https://github.com/xiao-meng-byte/algorithm-repository/tree/sliding-window) |
+| **`kmp`** | KMP算法 / 失配树 | C++ / Java | KMP基本匹配、Next数组推导、失配树（Fail Tree）构建与倍增LCA应用、逆向KMP计数问题。 | [🔗 前往 kmp](https://github.com/xiao-meng-byte/algorithm-repository/tree/kmp) |
 
 ---
 
@@ -43,7 +44,7 @@
 | 专栏分类 | 包含分支 | 适用阶段 |
 | :--- | :--- | :--- |
 | **入门基础篇** | `stack`, `hash`, `sliding-window`, `binary`, `bitset` | 大一 / 入门 |
-| **进阶数据结构篇** | `SegmentTree`, `fenwick`, `dsu`, `deque` | 进阶 / 大二 |
+| **进阶数据结构篇** | `SegmentTree`, `fenwick`, `dsu`, `deque`, `kmp` | 进阶 / 大二 |
 | **图论算法篇** | `guass`, `MST`, `prime` | 进阶 / 省赛 |
 | **动态规划与子数组篇** | `subarray`, `binary`, `fastpow` | 核心 / 面试 |
 
@@ -68,6 +69,8 @@
 | Prim 最小生成树 | O(m log n) | O(n + m) | 稠密图优先 |
 | 埃氏筛 | O(n log log n) | O(n) | 质数筛，简单快速 |
 | 欧拉筛（线性筛） | O(n) | O(n) | 每个数只筛一次 |
+| KMP 算法 | O(n + m) | O(m) | 字符串模式匹配，找子串 |
+| 失配树 (Fail Tree) | O(m log m) 预处理 | O(m log m) | 求 Border、LCA 及前缀关联 |
 
 ---
 
@@ -76,13 +79,6 @@
 如果你想在本地查看所有分支的代码，只需在终端执行以下命令：
 
 ### 1. 克隆整个仓库
+```bash
 git clone git@github.com:xiao-meng-byte/algorithm-repository.git
-
-### 2. 进入仓库目录
-cd algorithm-repository
-
-### 3. 查看所有分支
-git branch -a
-
-### 4. 切换到你想查看的算法分支（例如看滑动窗口的代码）
-git checkout sliding-window
+```
