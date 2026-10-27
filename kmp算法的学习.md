@@ -135,7 +135,7 @@ int main(){
 	int pos = kmp(s1, s2);
 	// 输出结果
 	cout << pos << endl;
-	return 0;\n
+	return 0;
 }
 ```
 * 以下几种情况的跳转进行讲解:
@@ -583,7 +583,7 @@ n = 10
 | 结论     | 内容                                             |
 +----------+--------------------------------------------------+
 | 周期     | p = n - next[n] 是 S 的最小周期                  |
-| 循环节   | 当且仅当 p | n 时，p 是最小循环节，次数 n/p        |
+| 循环节   | 当且仅当 p | n 时，p 是最小循环节，次数 n/p      |
 | 否则     | 最小循环节 = n，次数 = 1                         |
 +----------+--------------------------------------------------+
 核心证明链：
@@ -951,5 +951,189 @@ int main(){
 }
 ```
 
+### 题目六---力扣第1392题
+* 题目链接:https://leetcode.cn/problems/longest-happy-prefix/description/
 
+「快乐前缀」 是在原字符串中既是 非空 前缀也是后缀（不包括原字符串自身）的字符串。
+
+给你一个字符串 s，请你返回它的 最长快乐前缀。如果不存在满足题意的前缀，则返回一个空字符串 "" 。
+
+示例 1：
+
+输入：s = "level"
+输出："l"
+解释：不包括 s 自己，一共有 4 个前缀（"l", "le", "lev", "leve"）和 4 个后缀（"l", "el", "vel", "evel"）。最长的既是前缀也是后缀的字符串是 "l" 。
+示例 2：
+
+输入：s = "ababab"
+输出："abab"
+解释："abab" 是最长的既是前缀也是后缀的字符串。题目允许前后缀在原字符串中重叠。
+
+
+提示：
+
+1 <= s.length <= 10^5
+s 只含有小写英文字母
+
+* 实际上，这个题目就是`next`数组的应用，我们可以回想一下`next`数组的含义:
+next数组是对于子串 `S2` 的每一个前缀，它最长相等的“真前缀”和“真后缀”的长度
+那么正好就对应了这个题目所说的概念，至于需要最长，那么我们就可以用最后一个next来记录它，这样题目就简单了
+* 代码如下:
+```c
+//标准的next数组模板写法
+int *getnext(char *s1,int m){
+    //因为我们需要的是next[len]的值，那么我们要开m+1的容量
+    int *next=(int*)malloc((m+1)*sizeof(int));
+    next[0]=-1;
+    next[1]=0;
+    int i=2;
+    int index=0;
+    while(i<=m){
+        if(s1[i-1]==s1[index]){
+            next[i++]=++index;
+        }else if(index>0){
+            index=next[index];
+        }else{
+            next[i++]=0;
+        }
+    }
+    return next;
+}
+char* longestPrefix(char* s) {
+    int len=strlen(s);
+    int *next=getnext(s,len);
+    int ans=next[len];
+    //这里也是一样
+    char *str=(char*)malloc(sizeof(char)*(ans+1));
+    for(int i=0;i<ans;i++){
+        str[i]=s[i];
+    }
+    str[ans]='\0';
+    free(next);
+    return str;
+}
+```
+
+### 题目七---力扣796题旋转字符串
+* 题目链接:https://leetcode.cn/problems/rotate-string/description/
+
+给定两个字符串, s 和 goal。如果在若干次旋转操作之后，s 能变成 goal ，那么返回 true 。
+
+s 的 旋转操作 就是将 s 最左边的字符移动到最右边。
+
+例如, 若 s = 'abcde'，在旋转一次之后结果就是'bcdea' 。
+
+
+示例 1：
+
+输入： s = "abcde", goal = "cdeab"
+
+输出： true
+
+解释：
+
+将 s 向左旋转 2 个位置，即可将 "ab" 移动到字符串末尾，得到 "cdeab"，与 goal 相等。
+
+示例 2：
+
+输入： s = "abcde", goal = "abced"
+
+输出： false
+
+解释：
+
+无论对 s 进行多少次旋转，都无法得到 "abced"。由于字符的相对顺序不同，因此 goal 不是 s 的旋转结果。
+* 对于这个题目，我们首先就可以推的得一条结论：当goal字符串是s+s的子串是，就一定会返回`true`,下面给出证明:
+```text
+我们需要证明两个方向：
+充分性：如果 s 能旋转成 goal，那么 goal 是 s + s 的子串。
+必要性：如果 goal 是 s + s 的子串（且长度相等），那么 goal 是 s 的旋转。
+
+设字符串 s 的长度为 n，goal 的长度也为 n。
+
+1. 证明充分性（Rotation ⟹ Substring）
+假设 goal 是 s 经过旋转得到的。
+这就意味着存在一个切割点 k（0 ≤ k < n），使得：
+goal = s[k..n−1] + s[0..k−1]
+
+比如 k = 2 时，goal = s[2..n−1] + s[0..1]。
+我们来看 s + s 是什么：
+s + s = s[0..n−1] + s[0..n−1]
+
+我们在 s + s 中取从下标 k 开始、长度为 n 的子串：
+(s + s)[k..k+n−1]
+由于 k < n，这个区间跨越了 s + s 中两个 s 的交界处，正好是：
+s[k..n−1] + s[0..k−1]
+这个式子正好等于 goal。
+因此，goal 必然是 s + s 的一个子串。证毕。
+
+2. 证明必要性（Substring ⟹ Rotation）
+假设 goal 是 s + s 的一个子串，且 len(goal) = len(s) = n。
+这就意味着在 s + s 中，存在一个起始下标 i（0 ≤ i < n），使得：
+goal = (s + s)[i..i+n−1]
+
+因为 i < n，且子串长度为 n，所以这个子串的起点落在第一个 s 内，终点落在第二个 s 内（或者刚好在边界）。
+我们可以把 (s + s)[i..i+n-1] 分成两部分：
+第一部分：在第一个 s 中，从下标 i 到 n−1，即 s[i..n−1]。
+第二部分：在第二个 s 中，从下标 0 到 i−1（因为总共需要凑齐 n 个字符，前面已经取了 n−i 个，还差 i 个），即 s[0..i−1]。
+
+所以：
+goal = s[i..n−1] + s[0..i−1]
+
+这正是字符串 s 左移 i 位的结果，即 goal 是 s 的一个旋转。证毕。
+```
+* 所以这个题目其实也很简单了，代码如下：
+```c
+//标准的kmp模板
+int *getnext(char *s1,int m){
+    if(m==1){
+        int *next=(int*)malloc(sizeof(int)*1);
+        next[0]=-1;
+        return next;
+    }
+    int *next=(int*)malloc(m*sizeof(int));
+    next[0]=-1;
+    next[1]=0;
+    int i=2;
+    int index=0;
+    while(i<m){
+        if(s1[i-1]==s1[index]){
+            next[i++]=++index;
+        }else if(index>0){
+            index=next[index];
+        }else{
+            next[i++]=0;
+        }
+    }
+    return next;
+}
+int strStr(char* haystack, char* needle) {
+    int n=strlen(haystack);
+    int m=strlen(needle);
+    if(m>n) return -1;
+    int *next=getnext(needle,m);
+    int i=0,j=0;
+    while(i<n&&j<m){
+        if(haystack[i]==needle[j]){
+            i++;
+            j++;
+        }else if(j==0){
+            i++; 
+        }else{
+            j=next[j];
+        }
+    }
+    return j==m?i-j:-1;
+}
+bool rotateString(char* s, char* goal) {
+    int n=strlen(s);
+    int m=strlen(goal);
+    if(n!=m) return false;
+    //这里是C语言版的s+s，先copy，再连接
+    char *s1=(char*)malloc((2*n+1)*sizeof(char));
+    strcpy(s1,s);
+    strcat(s1,s);
+    return strStr(s1,goal)!=-1;
+}
+```
 
